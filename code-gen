@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Raleway:300,500,800' rel='stylesheet' type='text/css'>
+<style type="text/css">
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+body {
+background-color: #2d64a1;
+-webkit-animation: bgColorCycle 200s;
+background: url('img/blue_wash_wall.jpg');
+margin: 0;
+  
+}
+
+
+
+input[type="text"] {
+  background-color: #dde6f1;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  padding-left: 5px;
+  border: none;
+      border: 0 none;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+}
+  .lihp-input {
+   width: 1000px; 
+  }
+.ssInput {
+width: 250px;
+  background-color: #dde6f1;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  margin-left: 10px;
+  padding-left: 5px;
+}
+h1, h2, h3, h4 ,h5, h6, p, div, a, form, button, li, label {
+font-family: 'Raleway', helvetica, arial, sans-serif;
+color: #fff;
+}
+h1 {
+font-size: 1.5rem;
+margin: 10px 0 20px 0;
+  font-weight: 300;
+}
+p, label {
+font-size: 1.2rem;
+  font-weight: 300;
+}
+  p {
+    margin: 10px 0 5px 0;
+  }
+#imagePath, #link, #alt {
+height: 30px;
+line-height: 30px;
+font-size: 16px;
+  border: 0;
+
+}
+#output {
+  height: 200px;
+width: 300px;
+  resize: none;
+  border-radius: 3px;
+background-color: #dde6f1;
+border: 0;
+width: 1000px;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.container {
+width: 1000px;
+margin: 0 auto;
+  padding: 57px 0 10px 0;
+  
+}
+
+button {
+height: 40px;
+line-height: 18px;
+font-size: 18px;
+ vertical-align: text-top;
+  border-radius: 5px;
+  border: 0;
+  background-color: #3dab32;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+margin: 20px auto;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0 15px;
+  transition: background 0.05s;
+  box-sizing: border-box;
+  display: block;
+  }
+
+  button:active {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+  background-color: #389d2e;
+  }
+  
+  header {
+  background-color: #424242;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+  height: 57px;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  }
+  
+  #heading {
+  margin: 0;
+  line-height: 57px;
+  }
+  
+  #menu_wrap {
+  width: 1000px;
+margin: 0 auto;
+height: 45px;
+    padding: 0 10px;
+
+  }
+  
+  #heading {
+  font-weight: 800;
+  display: inline-block;
+    
+  }
+  
+  
+  #menu {
+  float: right;
+  height: 45px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  }
+  .menu-btn {
+  float: left;
+  list-style-type: none;
+  background-color: #515151;
+  background: -webkit-linear-gradient(top, #666666, #515151); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background:    -moz-linear-gradient(top, #666666, #515151); /* For Firefox (3.6 to 15) */
+  background:      -o-linear-gradient(top, #666666, #515151); /* For old Opera (11.1 to 12.0) */ 
+  background:         linear-gradient(to bottom, #666666, #515151); /* Standard syntax; must be last */
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  border: 1px #333333 solid;
+  display: table; 
+  margin: 0 0 0 5px;
+  height: 45px;
+  width: 100px;
+  transition: background 0.05s;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  box-sizing: border-box;
+  }
+  .menu-btn:first-child {
+  margin: 0;
+  }
+  .menu-btn p {
+    display: table-cell; 
+  vertical-align: middle;
+  font-weight: 400;
+  font-size: .8rem;
+  text-align: center;
+  letter-spacing: .5px;
+  }
+  .menu-btn.active p {
+    color: #ccc;
+  }
+  .active {
+  background: #424242;
+  border: 1px #6299d7 solid;
+  box-shadow: none;
+  }
+  .menu-btn:active {
+  background: #424242;
+  border: 1px #6299d7 solid;
+  box-shadow: none;
+  }
+
+  .ssCheck {
+  display: inline-block;
+    width: 80px;
+  background: #5b91d8;
+  padding: 5px 9px 5px 5px;
+  border-radius: 5px;
+  border: 1px #003471 solid;
+  font-weight: 500;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  margin: 5px 0 0 0;
+  }
+  
+  .ssCheck:hover {
+  background: #4c78b1;
+  cursor: pointer;
+  }
+
+  .segment {
+  margin: 15px 0 5px 0;
+  }
+    input[type="checkbox"] {
+    opacity: 0;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+	}
+  input[type="checkbox"] + span {
+    display:inline-block;
+    width:16px;
+    height:16px;
+    background:url(img/checkbox.png) left top no-repeat;
+    margin: 5px 10px 0 -15px;
+}
+    input[type="checkbox"]:checked + span {
+    display:inline-block;
+    width:16px;
+    height:16px;
+    background:url(img/checkbox.png) -21px top no-repeat;
+    margin: 5px 10px 0 -15px;
+}
+.checked {
+background: #3dab32;
+}
+.checked:hover {
+background: #33912a;
+}
+  .clear {
+    clear: both;
+  }
+
+.inline {
+display: inline-block;
+}
+.segmentLabel {
+margin: 5px 10px 5px 0;
+}
+
+.threeCol {
+width: 295px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+}
+
+  .ssOutput {
+width: 100%;
+  }
+.label-col {
+width: 53px;
+margin-left: 0;
+display: inline-block;
+margin-top: 37px;
+}
+.label-col p {
+line-height: 30px;
+margin: 6px 0;
+}
+
+.threeCol input {
+   margin: 5px 0; 
+  }
+  .hidden {
+  display: none;
+  }
+  hr {
+  border: 0; height: 1px; background-image: linear-gradient(to right, rgba(91, 145, 216, 0), rgba(91, 145, 216, 0.75), rgba(91, 145, 216, 0));
+  }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+<header>
+<div id="menu_wrap">
+<h1 id="heading">Content code generator</h1>
+<ul id="menu">
+<li class="menu-btn active" onClick="showPage('spendStretch', this);"><p>Spend<br>stretch</p></li>
+<li class="menu-btn" onClick="showPage('LIHP', this);"><p>Homepage banner</p></li>
+<li class="menu-btn" onClick="showPage('HPButtons', this);"><p>Homepage buttons</p></li>
+</ul>
+</div>
+</header>
+
+<div class="container" id="spendStretch">
+	<h1>Spend stretch banners</h1>
+	<form id="ss_input">
+		<label>End date:</label>
+		<input class="ssInput" id="ssDate" type="text" value="10 February 2016" ondblclick="this.select();"><br>
+		<p class="segment">Segments:</p>
+		<label for="80" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="80" name="80" value="80" />
+			<span></span>$80
+		</label>
+		<label for="90" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="90" name="90" value="90" />
+			<span></span>$90
+		</label>
+		<label for="100" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="100" name="100" value="100" />
+			<span></span>$100
+		</label>
+		<label for="110" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="110" name="110" value="110" />
+			<span></span>$110
+		</label>
+		<label for="120" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="120" name="120" value="120" />
+			<span></span>$120
+		</label>
+		<label for="130" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="130" name="130" value="130" />
+			<span></span>$130
+		</label>
+		<label for="140" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="140" name="140" value="140" />
+			<span></span>$140
+		</label>
+		<label for="150" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="150" name="150" value="150" />
+			<span></span>$150
+		</label>
+		<label for="160" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="160" name="160" value="160" />
+			<span></span>$160
+		</label>
+		<label for="170" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="170" name="170" value="170" />
+			<span></span>$170
+		</label>
+		<label for="180" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="180" name="180" value="180" />
+			<span></span>$180
+		</label>
+		<label for="190" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="190" name="190" value="190" />
+			<span></span>$190
+		</label>
+		<label for="200" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="200" name="200" value="200" />
+			<span></span>$200
+		</label>
+		<label for="210" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="210" name="210" value="210" />
+			<span></span>$210
+		</label>
+		<label for="220" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="220" name="220" value="220" />
+			<span></span>$220
+		</label>
+		<label for="230" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="230" name="230" value="230" />
+			<span></span>$230
+		</label>
+		<label for="240" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="240" name="240" value="240" />
+			<span></span>$240
+		</label>
+		<label for="250" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="250" name="250" value="250" />
+			<span></span>$250
+		</label>
+		<label for="260" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="260" name="260" value="260" />
+			<span></span>$260
+		</label>
+		<label for="270" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="270" name="270" value="270" />
+			<span></span>$270
+		</label>
+		<label for="280" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="280" name="280" value="280" />
+			<span></span>$280
+		</label>
+		<label for="290" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="290" name="290" value="290" />
+			<span></span>$290
+		</label>
+		<label for="300" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="300" name="300" value="300" />
+			<span></span>$300
+		</label>
+		<label for="310" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="310" name="310" value="310" />
+			<span></span>$310
+		</label>
+		<label for="320" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="320" name="320" value="320" />
+			<span></span>$320
+		</label>
+		<label for="330" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="330" name="330" value="330" />
+			<span></span>$330
+		</label>
+		<label for="340" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="340" name="340" value="340" />
+			<span></span>$340
+		</label>
+		<label for="350" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="350" name="350" value="350" />
+			<span></span>$350
+		</label>
+		<label for="360" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="360" name="360" value="360" />
+			<span></span>$360
+		</label>
+		<label for="370" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="370" name="370" value="370" />
+			<span></span>$370
+		</label>
+		<label for="380" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="380" name="380" value="380" />
+			<span></span>$380
+		</label>
+		<label for="390" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="390" name="390" value="390" />
+			<span></span>$390
+		</label>
+		<label for="400" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="400" name="400" value="400" />
+			<span></span>$400
+		</label>
+		<label for="410" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="410" name="410" value="410" />
+			<span></span>$410
+		</label>
+		<label for="420" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="420" name="420" value="420" />
+			<span></span>$420
+		</label>
+		<label for="430" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="430" name="430" value="430" />
+			<span></span>$430
+		</label>
+		<label for="440" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="440" name="440" value="440" />
+			<span></span>$440
+		</label>
+		<label for="450" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="450" name="450" value="450" />
+			<span></span>$450
+		</label>
+		<label for="460" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="460" name="460" value="460" />
+			<span></span>$460
+		</label>
+		<label for="470" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="470" name="470" value="470" />
+			<span></span>$470
+		</label>
+		<label for="480" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="480" name="480" value="480" />
+			<span></span>$480
+		</label>
+		<label for="490" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="490" name="490" value="490" />
+			<span></span>$490
+		</label>
+		<label for="500" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="500" name="500" value="500" />
+			<span></span>$500
+		</label>
+		<label for="510" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="510" name="510" value="510" />
+			<span></span>$510
+		</label>
+		<label for="520" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="520" name="520" value="520" />
+			<span></span>$520
+		</label>
+		<label for="530" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="530" name="530" value="530" />
+			<span></span>$530
+		</label>
+		<label for="540" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="540" name="540" value="540" />
+			<span></span>$540
+		</label>
+		<label for="550" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="550" name="550" value="550" />
+			<span></span>$550
+		</label>
+		<label for="560" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="560" name="560" value="560" />
+			<span></span>$560
+		</label>
+		<label for="570" class="ssCheck">
+			<input onClick="checker(this);" class="ssInputCheck" type="checkbox" id="570" name="570" value="570" />
+			<span></span>$570
+		</label>
+	</form>
+		<button onClick='generateSS();' type="button">Generate code</button>
+		<hr>
+		<div id="ssOutputWrap">
+		
+</div>
+</div>	
+</div>
+
+<div class="container" id="LIHP" style="display:none;">
+	<h1>Logged in homepage banner (clickable)</h1>
+	<form id="input">
+		<p>Image path:</p>
+		<input class="lihp-input" id="imagePath" type="text" value="/wcsstore" ondblclick="this.select();"><br>
+		<p>Link (including analytics tag):</p>
+		<input class="lihp-input" id="link" type="text" value="" ondblclick="this.select();"><br>
+		<p>Alt text:</p>
+		<input class="lihp-input" id="alt" type="text" value="" ondblclick="this.select();"><br>
+		<button onClick='generateLIHP();' type="button">Generate code</button><br>
+<hr>
+		<p>Output:</p>
+		<textarea class="lihp-input" readonly id="output" type="text" onClick="this.select();"></textarea>
+	</form>
+</div>
+
+<div class="container" id="HPButtons" style="display:none;">
+	<h1>Logged in homepage buttons</h1>
+</div>
+
+<script type = "text/javascript">
+function generateLIHP() {
+var path = document.forms.input.imagePath.value;
+var link = document.forms.input.link.value;
+var alt = document.forms.input.alt.value;
+var output = document.forms.input.output;
+output.value = "<style type='text/css'>.bg-clicker {height: 0px;width: 990px;position: relative;z-index: -1;top: -120px;}.tablet .bg-clicker{height: 0px;width: 990px;position: absolute;z-index: -1;top: 210px;}.tablet .home #promoContainer {   padding-top: 0;}.guest .bg-clicker {display: none;}</style><script type='text/javascript'>var appDivBefore = document.getElementById('contentPane');var appDivInside = document.getElementById('container');var bgdiv = document.createElement('div');bgdiv.setAttribute('class', 'bg-clicker');appDivInside.insertBefore(bgdiv, appDivBefore);var aTag = document.createElement('a');aTag.setAttribute('href','"+link+"');bgdiv.appendChild(aTag);var bgImg = document.createElement('img');bgImg.setAttribute('src','"+path+"');bgImg.setAttribute('height','120px');bgImg.setAttribute('width','990px');bgImg.setAttribute('alt','"+alt+"');aTag.appendChild(bgImg);</scr"+"ipt>";
+}
+function showPage(sel, button) {
+if(button.className.indexOf('active') > -1) {
+return;
+}
+var buttons = document.querySelectorAll('.menu-btn');
+for (p = 0; p < buttons.length; p++) {
+buttons[p].className = 'menu-btn';
+}
+var pages = document.querySelectorAll('.container');
+for(i = 0; i < pages.length; i++) {
+if(pages[i].id === sel) {
+pages[i].style.display = 'block';
+} else {
+pages[i].style.display = 'none';
+}
+}
+button.className = 'menu-btn active';
+}
+function checker(checkbox) {
+if(checkbox.checked && checkbox.parentNode.className.indexOf('checked') === -1) {
+checkbox.parentNode.className = 'ssCheck checked';
+} else if (!checkbox.checked && checkbox.parentNode.className.indexOf('checked') > -1) {
+checkbox.parentNode.className = 'ssCheck';
+} else {
+return;
+}
+}
+function resetCheck() {
+var chk = document.querySelectorAll('.ssInputCheck');
+for (i = 0; i < chk.length; i++) {
+chk[i].checked = false;
+}
+}
+function nextWed() {
+	var date = new Date();
+	date.setDate(date.getDate() + (3 - 1 - date.getDay() + 7) % 7 + 1 + 13);
+	var day = date.getDate();
+	var monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+	var month = monthNames[date.getMonth()];
+	var year = date.getFullYear();
+	document.getElementById('ssDate').value = day + ' ' + month + ' ' + year;
+	console.log(day + ' ' + month + ' ' + year);
+}
+function setAttributes(el, attrs) {
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+}
+function generateSS() {
+var ssInsert = document.getElementById('ssOutputWrap');
+ssInsert.innerHTML = ' ';
+var allCheckBoxes = [];
+var checkBoxes = document.querySelectorAll('.ssInputCheck');
+var ssLabel = document.createElement('div');
+ssLabel.setAttribute('class', 'label-col');
+var ssFDWrap = document.createElement('div');
+ssFDWrap.setAttribute('class', 'threeCol');
+var ss10pcWrap = document.createElement('div');
+ss10pcWrap.setAttribute('class', 'threeCol');
+var ss10DollWrap = document.createElement('div');
+ss10DollWrap.setAttribute('class', 'threeCol');
+var SSdate = document.getElementById('ssDate').value;
+for (i=0;i<checkBoxes.length;i++) {
+  if (checkBoxes[i].checked) {
+    allCheckBoxes.push(checkBoxes[i]);
+  }
+}
+for (j=0;j<allCheckBoxes.length;j++) {
+var ssLabelDiv = document.createElement('p');
+ssLabelDiv.setAttribute('class', 'inline segmentLabel');
+ssLabelDiv.innerHTML = '$' + allCheckBoxes[j].value;
+ssLabel.appendChild(ssLabelDiv);
+}
+var heading = document.createElement('p');
+heading.innerHTML = 'Free Delivery';
+ssFDWrap.appendChild(heading);
+for (j=0;j<allCheckBoxes.length;j++) {
+var ssFDoutDiv = document.createElement('input');
+setAttributes(ssFDoutDiv, {'class': 'ssOutput', 'type': 'text', 'readonly': 'readonly', 'onclick': 'this.select();'});
+ssFDoutDiv.value = '<div class="ssBanner"><div class="ssImgWrap"><img src="/wcsstore/ColesStorefrontAssetStore/images/-catimg/2016/landing-page-img/ss-fd-roundel.png" class="ssImg" alt="Free delivery"></div><div class="ssLgTextWrap"><p class="ssHeading">Every time you spend $' + allCheckBoxes[j].value + '* or more!</p><p class="ssDates">Offer ends ' + SSdate + '</p></div><div class="ssTermsWrap"><p class="ssTerms">*Minimum spend $' + allCheckBoxes[j].value + ' excluding tobacco products. Excludes Hamilton Island & remote deliveries</p></div></div><div class="clearfix"></div>';
+ssFDWrap.appendChild(ssFDoutDiv);
+}
+var heading = document.createElement('p');
+heading.innerHTML = '10% Off';
+ss10pcWrap.appendChild(heading);
+for (j=0;j<allCheckBoxes.length;j++) {
+var ss10pcoutDiv = document.createElement('input');
+setAttributes(ss10pcoutDiv, {'class': 'ssOutput', 'type': 'text', 'readonly': 'readonly', 'onclick': 'this.select();'});
+ss10pcoutDiv.value = '<div class="ssBanner"><div class="ssImgWrap"><img src="/wcsstore/ColesStorefrontAssetStore/images/-catimg/2016/landing-page-img/ss-10pc-off-roundel.png" class="ssImg" alt="10 percent off"></div><div class="ssLgTextWrap"><p class="ssHeading">Every time you spend $' + allCheckBoxes[j].value + '* or more!</p><p class="ssDates">Offer ends ' + SSdate + '</p></div><div class="ssTermsWrap"><p class="ssTerms">*Minimum spend $' + allCheckBoxes[j].value + ' excluding tobacco products. Excludes Hamilton Island & remote deliveries</p></div></div><div class="clearfix"></div>';
+ss10pcWrap.appendChild(ss10pcoutDiv);
+}
+var heading = document.createElement('p');
+heading.innerHTML = '$10 Off';
+ss10DollWrap.appendChild(heading);
+for (j=0;j<allCheckBoxes.length;j++) {
+var ss10DolloutDiv = document.createElement('input');
+setAttributes(ss10DolloutDiv, {'class': 'ssOutput', 'type': 'text', 'readonly': 'readonly', 'onclick': 'this.select();'});
+ss10DolloutDiv.value = '<div class="ssBanner"><div class="ssImgWrap"><img src="/wcsstore/ColesStorefrontAssetStore/images/-catimg/2016/landing-page-img/ss-10doll-off-roundel.png" class="ssImg" alt="10 dollars off"></div><div class="ssLgTextWrap"><p class="ssHeading">Every time you spend $' + allCheckBoxes[j].value + '* or more!</p><p class="ssDates">Offer ends ' + SSdate + '</p></div><div class="ssTermsWrap"><p class="ssTerms">*Minimum spend $' + allCheckBoxes[j].value + ' excluding tobacco products. Excludes Hamilton Island & remote deliveries</p></div></div><div class="clearfix"></div>';
+ss10DollWrap.appendChild(ss10DolloutDiv);
+}
+ssInsert.appendChild(ssLabel);
+ssInsert.appendChild(ssFDWrap);
+ssInsert.appendChild(ss10pcWrap);
+ssInsert.appendChild(ss10DollWrap);
+}
+nextWed();
+resetCheck();
+</script>
+</body>
+</html>
